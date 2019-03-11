@@ -1,6 +1,5 @@
-// var link = process.env.POPCLIP_TEXT;
 var link = process.env.POPCLIP_TEXT;
-// var link = "https://blog.csdn.net/typ2004/article/details/51946444";
+// var link = "https://alexzl5.github.io/use-custom-domain-with-hexo/";
 
 function getTitle() {
   var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
