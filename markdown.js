@@ -1,12 +1,12 @@
 var link = process.env.POPCLIP_TEXT;
-// var link = "https://alexzl5.github.io/use-custom-domain-with-hexo/";
+// var link = "https://www.regular-expressions.info/dot.html";
 
 function getTitle() {
   var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
   var xhr = new XMLHttpRequest();
-  var reg = /(?<=\<h1.*\>).*(?=\<\/h1\>)/g;
-  var reg2 = /(?<=\<a.*\>).*(?=\<\/a\>)/g;
-  var reg3 = /(?<=\<h2.*\>).*(?=\<\/h2\>)/g;
+  var reg = /(?<=\<h1.*\>).*(?=\<\/h1\>)/ig;
+  var reg2 = /(?<=\<a.*\>).*(?=\<\/a\>)/ig;
+  var reg3 = /(?<=\<h2.*\>).*(?=\<\/h2\>)/ig;
   xhr.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
       var rst = this.responseText
@@ -23,6 +23,7 @@ function getTitle() {
           var str4 = regMatch(str3,reg2);
           str = str4;
         }
+        str = str3
       }else{
         str ="Error"
       }
